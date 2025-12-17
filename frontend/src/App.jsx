@@ -380,7 +380,7 @@ function App({ signOut, user }) {
       <div
         key={index}
         className={`p-3 rounded-md border ${
-          result.RiskLevel === 'HIGH'
+          result.RiskLevel === 'HIGH🤨'
             ? 'bg-red-50 border-red-300'
             : 'bg-green-50 border-green-300'
         }`}
@@ -390,7 +390,7 @@ function App({ signOut, user }) {
         </p>
         <p>
           <b>Risk Level:</b>{' '}
-          <span className={result.RiskLevel === 'HIGH' ? 'text-red-600' : 'text-green-600'}>
+          <span className={result.RiskLevel === 'HIGH🤨' ? 'text-red-600' : 'text-green-600'}>
             {result.RiskLevel}
           </span>
         </p>
