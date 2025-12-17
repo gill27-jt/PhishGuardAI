@@ -374,13 +374,39 @@ function App({ signOut, user }) {
                   <h4 className="font-semibold text-gray-800">
                     {item.type} Analysis ({item.urlCount} URLs scanned)
                   </h4>
-                  {item.status === 'success' ? (
-                    <pre className="whitespace-pre-wrap break-words text-sm bg-gray-100 p-3 mt-2 rounded-md overflow-x-auto text-gray-700">
-                      {JSON.stringify(item.data, null, 2)}
-                    </pre>
-                  ) : (
-                    <p className="text-red-700 mt-1">Error: {item.error}</p>
-                  )}
+                 {item.status === 'success' ? (
+  <div className="mt-3 space-y-2 text-sm text-gray-800">
+    {item.data.map((result, index) => (
+      <div
+        key={index}
+        className={`p-3 rounded-md border ${
+          result.RiskLevel === 'HIGH'
+            ? 'bg-red-50 border-red-300'
+            : 'bg-green-50 border-green-300'
+        }`}
+      >
+        <p>
+          <b>URL:</b> {result.URL}
+        </p>
+        <p>
+          <b>Risk Level:</b>{' '}
+          <span className={result.RiskLevel === 'HIGH' ? 'text-red-600' : 'text-green-600'}>
+            {result.RiskLevel}
+          </span>
+        </p>
+        <p>
+          <b>Is Phishing:</b> {result.Details.is_phishing ? 'YES' : 'NO'}
+        </p>
+        <p>
+          <b>Reason:</b> {result.Details.reason}
+        </p>
+      </div>
+    ))}
+  </div>
+) : (
+  <p className="text-red-700 mt-1">Error: {item.error}</p>
+)}
+
                 </div>
               ))}
             </div>
