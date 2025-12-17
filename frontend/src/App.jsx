@@ -241,7 +241,7 @@ function App({ signOut, user }) {
           PhishGuard AI
         </h1>
         <p className="text-gray-600 mb-6 text-center">
-          Welcome, <span className="font-semibold text-blue-700">{user?.username || 'User'}</span>!
+          ਜੀ ਆਇਆਂ ਨੂੰ, <span className="font-semibold text-blue-700">{user?.username || 'User'}</span>!
         </p>
 
         {/* Content Analysis Section */}
