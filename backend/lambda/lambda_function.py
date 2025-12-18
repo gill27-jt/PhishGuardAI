@@ -31,8 +31,8 @@ def is_phishing_url(url: str) -> bool:
     """
     phishing_indicators = [
         "login", "secure", "account", "verify", 
-        "password", "banking", "paypal",
-        "update", "confirm", "click"
+        "password", "banking", "paypal",  "amazon"
+        "update",  "security", "confirm", "click"
     ]
     url_lower = url.lower()
     return any(indicator in url_lower for indicator in phishing_indicators)
